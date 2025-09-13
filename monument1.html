@@ -11,6 +11,7 @@
     background-color: #1a1a1a;
     color: #d4af37;
   }
+
   header {
     background-color: #111;
     padding: 15px;
@@ -18,11 +19,13 @@
     font-size: 24px;
     font-weight: bold;
   }
+
   .banner {
     width: 100%;
     height: 300px;
     background: url('https://upload.wikimedia.org/wikipedia/commons/d/da/Taj-Mahal.jpg') center/cover no-repeat;
   }
+
   .options {
     display: flex;
     justify-content: center;
@@ -30,6 +33,7 @@
     padding: 40px;
     flex-wrap: wrap;
   }
+
   .option-card {
     background-color: #2a2a2a;
     padding: 20px;
@@ -38,19 +42,23 @@
     text-align: center;
     transition: 0.3s;
   }
+
   .option-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 10px 20px rgba(212,175,55,0.5);
   }
+
   .option-card img {
     width: 100%;
     border-radius: 8px;
     cursor: pointer;
   }
+
   audio {
     display: block;
     margin: 20px auto;
   }
+
   details {
     margin: 40px auto;
     max-width: 800px;
@@ -58,15 +66,18 @@
     padding: 20px;
     border-radius: 12px;
   }
+
   details summary {
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
   }
+
   details p {
     margin-top: 15px;
     line-height: 1.6;
   }
+
   .quiz {
     max-width: 800px;
     margin: 40px auto;
@@ -74,7 +85,11 @@
     background-color: #2a2a2a;
     border-radius: 12px;
   }
-  .quiz h3 { margin-bottom: 15px; }
+
+  .quiz h3 { 
+    margin-bottom: 15px; 
+  }
+
   .quiz button {
     margin-top: 20px;
     padding: 10px 20px;
@@ -83,12 +98,17 @@
     cursor: pointer;
     border-radius: 6px;
   }
-  .quiz button:hover { background-color: #b79428; }
+
+  .quiz button:hover { 
+    background-color: #b79428; 
+  }
+
   #result {
     margin-top: 15px;
     font-weight: bold;
     color: #fff;
   }
+
   .done-btn {
     display: block;
     margin: 40px auto;
@@ -99,7 +119,10 @@
     cursor: pointer;
     font-size: 18px;
   }
-  .done-btn:hover { background-color: #b79428; }
+
+  .done-btn:hover { 
+    background-color: #b79428; 
+  }
 </style>
 </head>
 <body>
@@ -108,33 +131,32 @@
 
 <div class="banner"></div>
 
-<!-- Options: 3D + AR -->
+<!-- Options Section -->
 <div class="options">
+
+  <!-- 3D View Card -->
   <div class="option-card">
     <h2>3D View</h2>
-    <!-- Direct Google Drive link inside model-viewer -->
-    <model-viewer src="tajmalal.glb" 
-  alt="Taj Mahal 3D"
-  ar ar-modes="webxr scene-viewer quick-look"
-  environment-image="neutral"
-  auto-rotate camera-controls 
-  style="width:100%; height:300px;">
-</model-viewer>
+    <a href="https://drive.google.com/file/d/1fsbpin9Xk3hBlldHW_QHppweNHeLkZHe/view?usp=sharing" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Taj-Mahal.jpg" alt="View Taj Mahal in 3D">
+    </a>
     <audio controls>
       <source src="assets/audio/taj.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
     </audio>
   </div>
 
+  <!-- AR View Card -->
   <div class="option-card">
     <h2>AR View</h2>
-    <!-- Direct link (not converted) -->
     <a href="https://drive.google.com/file/d/19hvyc4KwsU6u6UESccUDwpCSSCFFlvoN/view?usp=drive_link" target="_blank">
       <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Taj-Mahal.jpg" alt="View Taj Mahal in AR">
     </a>
   </div>
-</div>
 
-<!-- More Info -->
+</div> <!-- End of Options -->
+
+<!-- More Info Section -->
 <details>
   <summary>More Info</summary>
   <p>
@@ -144,7 +166,7 @@
   </p>
 </details>
 
-<!-- Quiz -->
+<!-- Quiz Section -->
 <div class="quiz">
   <h3>Quiz: Test Your Knowledge!</h3>
   <form id="quizForm">
@@ -176,9 +198,6 @@ function checkQuiz(){
   document.getElementById("result").innerText = "You scored " + score + "/2!";
 }
 </script>
-
-<!-- Import model-viewer -->
-<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
 </body>
 </html>
